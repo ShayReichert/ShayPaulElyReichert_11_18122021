@@ -1,0 +1,51 @@
+@import '../utils/index.scss';
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4rem 10rem;
+
+  @include on-mobile() {
+    margin: 2rem;
+  }
+}
+
+.logo {
+  @include on-mobile() {
+    width: 145px;
+  }
+}
+
+ul {
+  display: flex;
+  color: $primary;
+  font-size: 2.4rem;
+
+  @include on-mobile() {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  li {
+    padding: 0 3rem;
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    @include on-mobile() {
+      padding: 0 0.5rem;
+    }
+
+    a {
+      &.current {
+        text-decoration: underline;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
