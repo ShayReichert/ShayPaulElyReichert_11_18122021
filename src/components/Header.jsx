@@ -5,10 +5,10 @@ import Logo from '.././assets/logo.svg'
 class Header extends Component {
   render() {
     return (
-      <div className="header-container">
+      <div className="header-section">
         <div className="logo">
           <a href="/">
-            <img src={Logo} alt="logo" />
+            <img src={Logo} alt="Kasa logo" />
           </a>
         </div>
         <div className="menu">

@@ -1,18 +1,18 @@
 @import '../utils/index.scss';
 
-.header-container {
+.header-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 4rem 10rem;
+  margin: 4rem $margin-desktop;
 
-  @include on-mobile() {
-    margin: 2rem;
+  @include on-tablet() {
+    margin: $margin-mobile;
   }
 }
 
 .logo {
-  @include on-mobile() {
+  @include on-tablet() {
     width: 145px;
   }
 }
@@ -22,7 +22,7 @@ ul {
   color: $primary;
   font-size: 2.4rem;
 
-  @include on-mobile() {
+  @include on-tablet() {
     font-size: 1.2rem;
     text-transform: uppercase;
   }
@@ -34,7 +34,7 @@ ul {
       padding-right: 0;
     }
 
-    @include on-mobile() {
+    @include on-tablet() {
       padding: 0 0.5rem;
     }
 

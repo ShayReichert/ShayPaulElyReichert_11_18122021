@@ -1,0 +1,36 @@
+@import '../utils/index.scss';
+
+.footer-section {
+  margin: auto;
+  background-color: $black;
+  color: $white;
+  font-size: 2.4rem;
+
+  @include on-tablet() {
+    font-size: 1.2rem;
+  }
+
+  .content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > * {
+      text-align: center;
+    }
+
+    .logo {
+      padding: 3rem 0 1rem;
+    }
+
+    .copyright {
+      padding: 2rem 0 1rem;
+      color: inherit;
+
+      @include on-tablet() {
+        padding: 2rem 0 3rem;
+      }
+    }
+  }
+}
