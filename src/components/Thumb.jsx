@@ -1,19 +1,17 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './Thumb.scss'
 
 class Thumb extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     const { id, cover, title } = this.props.lodging
 
     return (
-      <div key={id} className="lodging-thumb">
+      <Link to={`/lodging/${id}`} className="lodging-thumb">
         <img className="image" src={cover} alt={title} />
         <div className="title">{title}</div>
-      </div>
+      </Link>
     )
   }
 }

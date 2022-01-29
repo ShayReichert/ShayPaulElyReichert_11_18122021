@@ -5,9 +5,7 @@ import './NotFound.scss'
 import NotFoundImage from '.././assets/404.png'
 
 class NotFound extends Component {
-  constructor(props) {
-    super(props)
-  }
+
   render() {
     return (
       <>

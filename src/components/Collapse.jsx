@@ -3,9 +3,6 @@ import './Collapse.scss'
 import arrow from '.././assets/arrow.svg'
 
 class Collapse extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   handleClick(e) {
     e.stopPropagation()
@@ -20,7 +17,7 @@ class Collapse extends Component {
         <div className="collapse-header">
           <span>{title}</span>
           <span className="arrow">
-            <img src={arrow} />
+            <img src={arrow} alt="" />
           </span>
         </div>
         <div className="collapse-body">
