@@ -6,7 +6,7 @@ class Footer extends Component {
 
   render() {
     return (
-      <div className="footer-section">
+      <div className="footer">
         <div className="content">
           <div className="logo">
             <a href="/">

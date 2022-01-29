@@ -1,0 +1,87 @@
+@import '../utils/index.scss';
+
+.collapse {
+  margin: 0 0 3rem;
+  font-size: 2.4rem;
+
+  @include on-mobile() {
+    margin: 0 0 2rem;
+    font-size: 1.3rem;
+  }
+
+  &:first-of-type {
+    margin-top: 3rem;
+
+    @include on-mobile() {
+      margin-top: 2rem;
+    }
+  }
+
+  &.open {
+    .arrow {
+      transform: rotate(180deg);
+    }
+
+    .collapse-body {
+      opacity: 1;
+      max-height: none;
+      transform: scaleY(1);
+
+      p {
+        max-height: none;
+        opacity: 1;
+        padding: 3rem 2rem 2rem;
+
+        @include on-mobile() {
+          padding: 2rem 0.5rem 5rem 1rem;
+        }
+      }
+    }
+  }
+
+  .collapse-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: $primary;
+    position: relative;
+    color: $white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+
+    @include on-mobile() {
+      padding: 0.7rem 1.5rem;
+    }
+
+    span {
+      pointer-events: none;
+
+      &.arrow {
+        @include on-mobile() {
+          width: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .collapse-body {
+    background-color: $light-gray;
+    color: $primary;
+    border-radius: 0 0 5px 5px;
+    transform-origin: top center;
+    max-height: 0;
+    opacity: 0;
+    transform-origin: top center;
+    transform: scaleY(0);
+    // transition: all 500ms ease-out;
+
+    p {
+      max-height: 0;
+      opacity: 0;
+
+      @include on-mobile() {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

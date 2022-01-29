@@ -1,46 +1,38 @@
 import React, { Component } from 'react'
 import './Home.scss'
-import Hero from '.././assets/home_hero.jpg'
+import Hero from '../components/Hero'
+import heroImage from '.././assets/home_hero.jpg'
+import Thumb from '../components/Thumb'
+import data from '../data.json'
 
 class Home extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      lodgingData: [],
+    }
+  }
+
+  componentDidMount() {
+    this.setState({ lodgingData: data })
   }
 
   render() {
+    const { lodgingData } = this.state
+
     return (
       <>
-        <section className="hero-section">
-          <div className="content">
-            <div className="background">
-              <img src={Hero} alt="" />
-            </div>
-            <div className="text">
-              <h1>
-                <span>Chez vous,</span> partout et ailleurs
-              </h1>
-            </div>
-          </div>
-        </section>
+        <Hero image={heroImage}>
+          <h1>
+            <span>Chez vous,</span> partout et ailleurs
+          </h1>
+        </Hero>
 
         <section className="lodging-section">
           <div className="lodging-container">
-            <div className="lodging-thumb">
-              <div className="title">Titre de la location</div>
-            </div>
-
-            <div className="lodging-thumb">
-              <div className="title">Titre de la location</div>
-            </div>
-
-            <div className="lodging-thumb">
-              <div className="title">Titre de la location</div>
-            </div>
-
-            <div className="lodging-thumb">
-              <div className="title">Titre de la location</div>
-            </div>
+            {lodgingData?.map((lodging) => (
+              <Thumb key={lodging.id} lodging={lodging} />
+            ))}
           </div>
         </section>
       </>

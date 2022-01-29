@@ -1,0 +1,14 @@
+@import '../utils/index.scss';
+
+.collapses-section {
+  margin: 0 $margin-desktop 2rem;
+
+  @include on-tablet() {
+    margin: 0 $margin-mobile;
+  }
+
+  .collapses-container {
+    max-width: 1024px;
+    margin: auto;
+  }
+}
