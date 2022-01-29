@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Link } from 'react-router-dom'
 import './Footer.scss';
 import logoWhite from '.././assets/logo_white.svg'
 
@@ -9,9 +10,9 @@ class Footer extends Component {
       <div className="footer">
         <div className="content">
           <div className="logo">
-            <a href="/">
+            <Link to="/">
               <img src={logoWhite} alt="Kasa logo" />
-            </a>
+            </Link>
           </div>
           <div className="copyright">
             © {new Date().getFullYear()} Kasa. All rights reserved

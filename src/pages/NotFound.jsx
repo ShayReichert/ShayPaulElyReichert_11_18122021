@@ -1,4 +1,6 @@
+
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './NotFound.scss'
 import NotFoundImage from '.././assets/404.png'
 
@@ -16,7 +18,7 @@ class NotFound extends Component {
               Oups! La page que <span>vous demandez n'existe pas.</span>
             </p>
 
-            <a href="/">Retourner sur la page d’accueil</a>
+            <Link to="/">Retourner sur la page d’accueil</Link>
           </div>
         </section>
       </>

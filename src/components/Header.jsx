@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './Header.scss'
 import Logo from '.././assets/logo.svg'
 
@@ -7,22 +8,22 @@ class Header extends Component {
     return (
       <div className="header">
         <div className="logo">
-          <a href="/">
+          <Link to="/">
             <img src={Logo} alt="Kasa logo" />
-          </a>
+          </Link>
         </div>
-        <div className="menu">
+        <nav className="menu">
           <ul>
             <li>
-              <a href="/" className="current">
+              <Link to="/" className="current">
                 Accueil
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about">A propos</a>
+              <Link to="about">A propos</Link>
             </li>
           </ul>
-        </div>
+        </nav>
       </div>
     )
   }
