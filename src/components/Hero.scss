@@ -1,7 +1,7 @@
 @import '../utils/index.scss';
 
 .hero-section {
-  margin: 0 $margin-desktop 2rem;
+  margin: 7rem $margin-desktop 2rem;
 
   @include on-tablet() {
     margin: 0 $margin-mobile;

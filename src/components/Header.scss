@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 4rem $margin-desktop;
+  margin: 4rem $margin-desktop 2.5rem;
 
   @include on-tablet() {
     margin: $margin-mobile;
