@@ -3,17 +3,19 @@ import './Collapse.scss'
 import arrow from '.././assets/arrow.svg'
 
 class Collapse extends Component {
-
   handleClick(e) {
     e.stopPropagation()
     e.target.parentElement.classList.toggle('open')
   }
 
   render() {
-    const { title, content } = this.props.collapse
+    const { title, content, contentList, format } = this.props.collapse
 
     return (
-      <div className="collapse" onClick={(e) => this.handleClick(e)}>
+      <div
+        className={`collapse ${format ? format : ''}`}
+        onClick={(e) => this.handleClick(e)}
+      >
         <div className="collapse-header">
           <span>{title}</span>
           <span className="arrow">
@@ -21,7 +23,14 @@ class Collapse extends Component {
           </span>
         </div>
         <div className="collapse-body">
-          <p>{content}</p>
+          {content && <p>{content}</p>}
+          {contentList && (
+            <ul>
+              {contentList.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     )

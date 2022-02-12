@@ -9,42 +9,50 @@
   @include on-tablet() {
     margin: $margin-mobile;
   }
-}
 
-.logo {
-  @include on-tablet() {
-    width: 145px;
-  }
-}
-
-ul {
-  display: flex;
-  color: $primary;
-  font-size: 2.4rem;
-
-  @include on-tablet() {
-    font-size: 1.2rem;
-    text-transform: uppercase;
-  }
-
-  li {
-    padding: 0 3rem;
-
-    &:last-of-type {
-      padding-right: 0;
+  .logo {
+    @include on-tablet() {
+      width: 145px;
     }
+  }
+
+  ul {
+    display: flex;
+    color: $primary;
+    font-size: 2.4rem;
 
     @include on-tablet() {
-      padding: 0 0.5rem;
+      font-size: 1.2rem;
+      text-transform: uppercase;
     }
 
-    a {
-      &.current {
-        text-decoration: underline;
+    li {
+      padding: 0 3rem;
+
+      &:last-of-type {
+        padding-right: 0;
       }
 
-      &:hover {
-        opacity: 0.8;
+      @include on-tablet() {
+        padding: 0 0.5rem;
+      }
+
+      a {
+        @include after() {
+          @include size(100%, 1px);
+          display: block;
+          background-color: $primary;
+          transform-origin: left;
+          transform: scaleX(0);
+          transition: transform 0.3s;
+        }
+
+        &:hover {
+          @include after() {
+            @include size(100%, 1px);
+            transform: scaleX(1);
+          }
+        }
       }
     }
   }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { ReactComponent as StarImage } from '../assets/star.svg'
 import './SingleLodging.scss'
 import Gallery from '../components/Gallery'
+import Collapse from '../components/Collapse'
 import data from '../data.json'
 
 class SingleLodging extends Component {
@@ -22,12 +24,10 @@ class SingleLodging extends Component {
     this.setState({ singleLodgingData: singleLodging })
   }
 
-
   render() {
     const singleLodging = this.state.singleLodgingData
     const {
       pictures,
-      cover,
       title,
       location,
       host,
@@ -39,55 +39,68 @@ class SingleLodging extends Component {
 
     return (
       <>
-
         <Gallery pictures={pictures} />
-
-
-        {/* Créer composant Gallery (pictures) */}
 
         <section className="single-content-section">
           <div className="row">
-            <div className="title-container">
-              <h1>{title}</h1>
-              <p>{location}</p>
+            <div className="column">
+              <div className="title-container">
+                <h1>{title}</h1>
+                <p>{location}</p>
+              </div>
+              <ul className="tags-container">
+                {tags.map((tag, index) => (
+                  <li key={index} className="tag">
+                    {tag}
+                  </li>
+                ))}
+                {/* Créer component <Tag /> */}
+              </ul>
             </div>
-            <div className="host-container">
-              <div className="name">{host.name}</div>
-              <img src={host.picture} alt="host" className="picture" />
+
+            <div className="column">
+              <div className="host-container">
+                <p className="name">{host.name}</p>
+                <img
+                  src={host.picture}
+                  alt="host"
+                  className="picture"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="rating">
+                {[...Array(5)].map((star, index) => {
+                  index += 1
+                  return (
+                    <StarImage
+                      fill={`${index <= rating ? '#FF6060' : '#E3E3E3'}`}
+                      key={index}
+                      className="star"
+                    />
+                  )
+                })}
+              </div>
             </div>
           </div>
 
           <div className="row">
-            <div className="tags-container">
-              {tags.map((tag, index) => (
-                <div key={index} className="tag">
-                  {tag}
-                </div>
-              ))}
-              {/* Créer component <Tag /> */}
+            <div className="collapses-container-half">
+              <Collapse
+                collapse={{
+                  title: 'Description',
+                  content: description,
+                  format: 'collapse-half',
+                }}
+              />
+              <Collapse
+                collapse={{
+                  title: 'Équipements',
+                  contentList: equipments,
+                  format: 'collapse-half',
+                }}
+              />
             </div>
-
-            <div className="rating">
-              {[...Array(5)].map((star, index) => {
-                index += 1
-                return (
-                  <span
-                    type="button"
-                    key={index}
-                    className={`star ${index <= rating ? 'full' : ''}`}
-                  >
-                    *{/* Mettre le vrai svg */}
-                  </span>
-                )
-              })}
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="collapse-half">{description}</div>
-            <div className="collapse-half">{equipments}</div>
-            {/* Créer component <CollapseHalf /> */}
-            {/* Cf modèle Component Collapse */}
           </div>
         </section>
       </>

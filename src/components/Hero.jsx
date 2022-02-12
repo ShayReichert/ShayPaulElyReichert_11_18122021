@@ -8,7 +8,7 @@ class Hero extends Component {
       <section className="hero-section">
         <div className="content">
           <div className="background">
-            <img src={this.props.image} alt="" />
+            <img src={this.props.image} alt="" loading="lazy" />
             {this.props.imageMobile && (
               <img
                 className="mobile-image"

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Gallery.scss'
+import arrow from '../assets/arrow.svg'
 
 class Gallery extends Component {
   constructor(props) {
@@ -25,16 +26,23 @@ class Gallery extends Component {
 
     return (
       <section className="gallery-section">
-        <button
-          className="prev"
-          onClick={() => this.updateIndex(this.state.activeIndex - 1)}
-        ></button>
-        <button
-          className="next"
-          onClick={() => this.updateIndex(this.state.activeIndex + 1)}
-        ></button>
-        {/* TODO : */}
-        {/* Pas de buttons s'il n'y a qu'une seule image */}
+        {pictures.length !== 1 && (
+          <>
+            <button
+              className="prev"
+              onClick={() => this.updateIndex(this.state.activeIndex - 1)}
+            >
+              <img src={arrow} alt="" />
+            </button>
+            <button
+              className="next"
+              onClick={() => this.updateIndex(this.state.activeIndex + 1)}
+            >
+              <img src={arrow} alt="" />
+            </button>
+          </>
+        )}
+
         <div
           className="inner"
           style={{
@@ -43,7 +51,7 @@ class Gallery extends Component {
         >
           {pictures.map((picture, index) => (
             <div key={index} className="item-container">
-              <img src={picture} alt="" className="item" />
+              <img src={picture} alt="" className="item" loading="lazy" />
               <div className="position">
                 {index + 1} / {pictures.length}
               </div>

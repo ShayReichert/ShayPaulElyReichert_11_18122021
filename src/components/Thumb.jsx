@@ -9,7 +9,7 @@ class Thumb extends Component {
 
     return (
       <Link to={`/lodging/${id}`} className="lodging-thumb">
-        <img className="image" src={cover} alt={title} />
+        <img className="image" src={cover} alt={title} loading="lazy" />
         <div className="title">{title}</div>
       </Link>
     )
