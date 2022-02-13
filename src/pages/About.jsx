@@ -47,7 +47,11 @@ class About extends Component {
         <section className="collapses-section">
           <div className="collapses-container">
             {this.state.collapseData.map((collapse) => (
-              <Collapse key={collapse.id} collapse={collapse} />
+              <Collapse
+                key={collapse.id}
+                title={collapse.title}
+                content={collapse.content}
+              />
             ))}
           </div>
         </section>

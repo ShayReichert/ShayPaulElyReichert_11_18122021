@@ -3,7 +3,9 @@ import { ReactComponent as StarImage } from '../assets/star.svg'
 import './SingleLodging.scss'
 import Gallery from '../components/Gallery'
 import Collapse from '../components/Collapse'
+import Tag from '../components/Tag'
 import data from '../data.json'
+import NotFound from './NotFound'
 
 class SingleLodging extends Component {
   constructor(props) {
@@ -15,13 +17,17 @@ class SingleLodging extends Component {
         pictures: [],
         tags: [],
       },
+      isCorrectID: false,
     }
   }
 
   componentDidMount() {
     const { lodgingId } = this.props.match.params
     const singleLodging = data.find((lodging) => lodging.id === lodgingId)
-    this.setState({ singleLodgingData: singleLodging })
+
+    if (singleLodging) {
+      this.setState({ singleLodgingData: singleLodging, isCorrectID: true })
+    }
   }
 
   render() {
@@ -37,7 +43,7 @@ class SingleLodging extends Component {
       equipments,
     } = singleLodging
 
-    return (
+    return this.state.isCorrectID ? (
       <>
         <Gallery pictures={pictures} />
 
@@ -48,13 +54,11 @@ class SingleLodging extends Component {
                 <h1>{title}</h1>
                 <p>{location}</p>
               </div>
+
               <ul className="tags-container">
                 {tags.map((tag, index) => (
-                  <li key={index} className="tag">
-                    {tag}
-                  </li>
+                  <Tag key={index} tag={tag} />
                 ))}
-                {/* Créer component <Tag /> */}
               </ul>
             </div>
 
@@ -87,23 +91,21 @@ class SingleLodging extends Component {
           <div className="row">
             <div className="collapses-container-half">
               <Collapse
-                collapse={{
-                  title: 'Description',
-                  content: description,
-                  format: 'collapse-half',
-                }}
+                title="Description"
+                content={description}
+                format="collapse-half"
               />
               <Collapse
-                collapse={{
-                  title: 'Équipements',
-                  contentList: equipments,
-                  format: 'collapse-half',
-                }}
+                title="Équipements"
+                contentList={equipments}
+                format="collapse-half"
               />
             </div>
           </div>
         </section>
       </>
+    ) : (
+      <NotFound />
     )
   }
 }

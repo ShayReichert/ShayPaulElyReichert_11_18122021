@@ -51,7 +51,7 @@ class Gallery extends Component {
         >
           {pictures.map((picture, index) => (
             <div key={index} className="item-container">
-              <img src={picture} alt="" className="item" loading="lazy" />
+              <img src={picture} alt="" className="item" />
               <div className="position">
                 {index + 1} / {pictures.length}
               </div>

@@ -9,7 +9,7 @@ class Collapse extends Component {
   }
 
   render() {
-    const { title, content, contentList, format } = this.props.collapse
+    const { title, content, contentList, format } = this.props
 
     return (
       <div

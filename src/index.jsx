@@ -19,6 +19,7 @@ ReactDOM.render(
         </Route>
 
         <Route
+          exact
           path="/lodging/:lodgingId"
           render={(props) => <SingleLodging {...props} />}
         />
