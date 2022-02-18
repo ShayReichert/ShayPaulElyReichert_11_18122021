@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/ShayPaulElyReichert_11_18122021/static/css/main.47be94d3.css",
+    "main.js": "/ShayPaulElyReichert_11_18122021/static/js/main.a6aa82c9.js",
+    "static/media/about_hero.jpg": "/ShayPaulElyReichert_11_18122021/static/media/about_hero.96ba68b2b24837424fa9.jpg",
+    "static/media/home_hero.jpg": "/ShayPaulElyReichert_11_18122021/static/media/home_hero.053687a54587bf187cfc.jpg",
+    "static/media/about_hero_mobile.jpg": "/ShayPaulElyReichert_11_18122021/static/media/about_hero_mobile.e2902d7ad3a2d4679d13.jpg",
+    "static/media/logo.svg": "/ShayPaulElyReichert_11_18122021/static/media/logo.a6101328193bb3191cbcb50c120ec0d1.svg",
+    "static/media/logo_white.svg": "/ShayPaulElyReichert_11_18122021/static/media/logo_white.ee689fd9409d1b5a898b4247819d8a00.svg",
+    "index.html": "/ShayPaulElyReichert_11_18122021/index.html",
+    "static/media/arrow.svg": "/ShayPaulElyReichert_11_18122021/static/media/arrow.557045ea3cccdf4a6a60a53481c321e2.svg",
+    "static/media/star.svg": "/ShayPaulElyReichert_11_18122021/static/media/star.4609a8dd65d25f488bbb4f5127f1739b.svg",
+    "main.47be94d3.css.map": "/ShayPaulElyReichert_11_18122021/static/css/main.47be94d3.css.map",
+    "main.a6aa82c9.js.map": "/ShayPaulElyReichert_11_18122021/static/js/main.a6aa82c9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.47be94d3.css",
+    "static/js/main.a6aa82c9.js"
+  ]
+}
